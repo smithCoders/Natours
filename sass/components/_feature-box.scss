@@ -1,0 +1,39 @@
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  padding: 2.8rem 0;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+  text-align: center;
+  transition: all 0.3s;
+
+  @include respond(tab-land-small) {
+    padding: 2rem 0;
+  }
+  @include respond(tab-port-small) {
+    width: 50%;
+  }
+  @include respond(700pxs) {
+    width: 40%;
+  }
+  &__icon {
+    font-size: 6.2rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-lighter,
+      $color-primary-darken
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    @include respond(tab-land-small) {
+      font-size: 4.4rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.06);
+  }
+}

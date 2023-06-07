@@ -1,0 +1,17 @@
+.u-text-center {
+  text-align: center;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.6rem;
+}
+
+.container {
+  width: 110rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}

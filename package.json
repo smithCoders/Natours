@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for Natour",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css  css/styles-font.css css/style.comp.css",
+    "prefix:css":
+    
+  },
+  "author": "Esmael",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^8.0.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

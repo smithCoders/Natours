@@ -1,0 +1,55 @@
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /*  prevent shaking of animations*/
+  backface-visibility: hidden;
+  margin-bottom: 4.8rem;
+}
+.heading-primary-main {
+  display: block;
+  font-size: 4.4rem;
+  letter-spacing: 3.6rem;
+  font-weight: 400;
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.6rem;
+  animation-name: moveInRight;
+  animation-duration: 2s;
+}
+
+.heading-secondary {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+}
+.heading-secondary:hover {
+  transform: skewX(15deg) skewY(2deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-teritary {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  word-spacing: 0.5px;
+}
+
+.texts:not(:last-child) {
+  margin-bottom: 3.6rem;
+}

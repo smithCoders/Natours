@@ -1,0 +1,66 @@
+.story {
+  max-width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.3);
+  background-color: rgba($color-white, 0.5);
+  border-radius: 3px;
+  padding: 6.4rem;
+  padding-left: 9.4rem;
+  transform: skewX(-15deg);
+  font-size: $default-fontsize;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 6.4rem;
+    flex-direction: column;
+  }
+  & > * {
+    transform: skewX(15deg);
+  }
+
+  &__figure {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(15deg);
+    position: relative;
+  }
+  &__img {
+    height: 100%;
+    /*  position: absolute;
+    left: 50%;
+    top: 50%; */
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8rem;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+  // animating and displaying the figcaption when we hover the story
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  // amaking blur the image  when we hover the story
+  &:hover &__img {
+    transform: scale(1);
+    filter: blur(0.5rem) brightness(70%);
+  }
+  &__btn-box {
+    text-align: center;
+  }
+}

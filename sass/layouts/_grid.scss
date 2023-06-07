@@ -1,0 +1,114 @@
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  @include respond(tab-land-small) {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+  @include respond(tab-port-small) {
+    column-gap: 1.8rem;
+    row-gap: 4.8rem;
+    align-items: center;
+    justify-content: center;
+  }
+  &:not(:last-child) {
+    margin-bottom: 9.6rem;
+  }
+  &-col-2 {
+    grid-template-columns: 1fr 1fr;
+    @include respond(tab-port-small) {
+      grid-template-columns: 1fr;
+    }
+
+    &--small {
+      grid-template-columns: 0.25fr 0.75fr;
+    }
+    &--medium {
+      grid-template-columns: 1.3fr 1fr;
+    }
+  }
+  &-col-3 {
+    grid-template-columns: repeat(3, 1fr);
+    @include respond(tab-port-small) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &-col-4 {
+    grid-template-columns: repeat(4, 1fr);
+    @include respond(tab-land-small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(tab-port-small) {
+      grid-template-columns: 1fr;
+      @include center-flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// FLOAT LAYOUT
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
+    );
+  }
+}

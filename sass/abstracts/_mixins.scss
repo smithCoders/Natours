@@ -1,0 +1,91 @@
+@mixin clearFix {
+  ::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// MEDIA QUERY MANAGER.
+/*
+0-600:phone
+600-900:portriat mood tablet
+900-1200:- landscape mood tablet.
+1200-1800:normal style
+1800-......  :- big screen
+
+$breakpoint choices,
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint== tab-land {
+    // 1200px===75em screen
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-land-small {
+    // 1050px===65.65em screen
+    @media (max-width: 65.625em) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-port {
+    // 900px===56.5 screen
+    @media (max-width: 56.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-port-small {
+    // 870px===54.5 screen
+    @media (max-width: 54.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint==700pxs {
+    // 700px===43.75 screen
+    @media (max-width: 43.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint== phone {
+    // 600px==37.5em screen
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint== small-phone {
+    // 500px==31.25em screen
+    @media (max-width: 31.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint==big-desktop {
+    // 1800px===113 screen
+    @media (min-width: 113em) {
+      @content;
+    }
+  }
+}
+
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98.
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/

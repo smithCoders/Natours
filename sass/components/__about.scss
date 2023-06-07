@@ -1,0 +1,39 @@
+.text-box {
+  @include respond(tab-port-small) {
+    align-self: center;
+    max-width: 80%;
+  }
+  @include respond(700pxs) {
+    max-width: 60%;
+  }
+  @include respond(phone) {
+    max-width: 50%;
+  }
+}
+.about {
+  position: relative;
+}
+.btn-about {
+  @include respond(tab-port-small) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+.composition {
+  @include respond(tab-port-small) {
+    align-self: center;
+    width: 50%;
+    margin: 0 auto;
+  }
+  @include respond(700pxs) {
+    max-width: 40%;
+    margin: 0 auto;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+  }
+  @include respond(small-phone) {
+    width: 30%;
+  }
+}
